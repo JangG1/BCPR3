@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+  <input type="text"  name="tts">
+  <button type="button" @click="sendData()">전송</button>
+  
+  <script>
+  sendData() {
+      axios({
+              url: 'api/tts/test',
+              method: 'post',
+              data: {
+                  data: this.text
+              }
+          })
+          .then((response) => {
+              console.log(response)
+          })
+  }
+  </script>
+</body>
+</html>
